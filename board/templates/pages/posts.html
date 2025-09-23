@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h2>All Posts</h2>
+{% endblock header %}
+
+{% block content %}
+{% if posts %}
+  <ul>
+  {% for post in posts %}
+    <li>
+      <h3>{{ post['title'] }}</h3>
+      <p>{{ post['body'] }}</p>
+      <small>Created: {{ post['created'] }}</small>
+    </li>
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No posts yet.</p>
+{% endif %}
+{% endblock content %}
